@@ -12,6 +12,7 @@ def get_data(domain):
     print('--------- Filtered----------')
     filter_results = apioutput['results'][0]['whois']
     print(filter_results)
+    return apioutput['results'][0]['whois']
 
 '''
     print('--------- First----------')
@@ -24,3 +25,8 @@ def get_data(domain):
 '''
 
 result = get_data('amazon.com')
+#print('This is the results \n' + str(result))
+
+# Append the DNS serrver info to a file on the OS
+with open('output.txt', 'w') as file:
+    file.write(str(result))
